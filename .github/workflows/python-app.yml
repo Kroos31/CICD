@@ -82,7 +82,5 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          repository: tanikroos
-/
-cicd
+          repository: tanikroos/cicd
           tag_with_ref: true
