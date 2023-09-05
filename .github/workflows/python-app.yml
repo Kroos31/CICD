@@ -48,7 +48,7 @@ jobs:
 #           name: coverage-report
 #           path: coverage.xml
 
-  build-and-push-docker-image-to-github-packages:
+ build-and-push-docker-image-to-github-packages:
     runs-on: ubuntu-latest 
     permissions: 
       contents: read
@@ -66,7 +66,7 @@ jobs:
         tag_with_sha: true
         tag_with_ref: true
   
-  build-and-push-docker-image-to-dockerhub:
+ build-and-push-docker-image-to-dockerhub:
     runs-on: ubuntu-latest   
     steps:
       - name: Check out code
