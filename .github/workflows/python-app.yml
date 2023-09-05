@@ -65,8 +65,7 @@ build-and-push-docker-image-to-github-packages:
         tag_with_sha: true
         tag_with_ref: true
 
-  
-  build-and-push-docker-image-to-dockerhub:
+build-and-push-docker-image-to-dockerhub:
     runs-on: ubuntu-latest   
     steps:
       - name: Check out code
