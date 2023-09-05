@@ -47,7 +47,7 @@ jobs:
     #       name: coverage-report
     #       path: coverage.xml
 
-    build-and-push-docker-image-to-github-packages:
+build-and-push-docker-image-to-github-packages:
     runs-on: ubuntu-latest 
     permissions: 
       contents: read
