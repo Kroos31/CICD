@@ -40,7 +40,7 @@ jobs:
           coverage run -m pytest test.py
           coverage xml -o coverage.xml
           coverage report -m
-      working-directory: /home/runner/work/batchsevenproject/batchsevenproject
+      working-directory: C:\Users\user\Desktop\CICD
 
     - name: Upload coverage report
       uses: actions/upload-artifact@v2
