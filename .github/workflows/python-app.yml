@@ -2,9 +2,9 @@ name: Python application
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 jobs:
   build-test:
@@ -26,6 +26,7 @@ jobs:
     - name: Test with pytest
       run: |
         pytest test.py --doctest-modules --junitxml=junit/test-results.xml
+
     - name: Upload pytest test results
       uses: actions/upload-artifact@v3
       with:
@@ -34,20 +35,20 @@ jobs:
       # Use always() to always run this step to publish test results when there are test failures
       if: ${{ always() }}
     
-    # - name: Run tests with coverage
-    #   run: |
-    #       coverage run -m pytest test.py
-    #       coverage xml -o coverage.xml
-    #       coverage report -m
-    #   working-directory: C:\Users\user\Desktop\CICD
+#     - name: Run tests with coverage
+#       run: |
+#           coverage run -m pytest test.py
+#           coverage xml -o coverage.xml
+#           coverage report -m
+#       working-directory: /home/runner/work/batchsevenproject/batchsevenproject
 
-    # - name: Upload coverage report
-    #   uses: actions/upload-artifact@v2
-    #   with:
-    #       name: coverage-report
-    #       path: coverage.xml
+#     - name: Upload coverage report
+#       uses: actions/upload-artifact@v2
+#       with:
+#           name: coverage-report
+#           path: coverage.xml
 
-build-and-push-docker-image-to-github-packages:
+  build-and-push-docker-image-to-github-packages:
     runs-on: ubuntu-latest 
     permissions: 
       contents: read
@@ -64,8 +65,8 @@ build-and-push-docker-image-to-github-packages:
         repository: ${{ github.repository }}/flaskapptest
         tag_with_sha: true
         tag_with_ref: true
-
-build-and-push-docker-image-to-dockerhub:
+  
+  build-and-push-docker-image-to-dockerhub:
     runs-on: ubuntu-latest   
     steps:
       - name: Check out code
